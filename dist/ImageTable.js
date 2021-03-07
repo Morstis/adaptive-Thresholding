@@ -35,19 +35,19 @@ var ImageTable = /** @class */ (function () {
         configurable: true
     });
     ImageTable.prototype.getPixelAt = function (insert, y) {
+        var x;
         if (y !== undefined) {
-            if (insert < 0 || y < 0) {
-                return 0;
-            }
-            return this._image[y][insert];
+            x = insert;
         }
         else {
             var ins = insert;
-            if (ins[0] < 0 || ins[1] < 0) {
-                return 0;
-            }
-            return this._image[ins[0]][ins[1]];
+            x = ins[0];
+            y = ins[1];
         }
+        if (x < 0 || y < 0) {
+            return 0;
+        }
+        return this._image[y][x];
     };
     ImageTable.prototype.setPixelAt = function (x, y, value) {
         this._image[y][x] = value;
