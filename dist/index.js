@@ -8,6 +8,7 @@ var image = [
     [13, 14, 15, 16],
 ];
 var intImg = new IntegralImage_1.IntegralImage(image);
-console.log(intImg.getFrom0ToBSlow([3, 2]));
 intImg.convert();
+console.log(intImg.intImg);
+console.log(intImg.getFrom0ToBSlow([3, 2]));
 console.log(intImg.getFromAToB([0, 0], [3, 2]));
